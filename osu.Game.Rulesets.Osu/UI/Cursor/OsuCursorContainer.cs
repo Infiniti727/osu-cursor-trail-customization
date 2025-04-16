@@ -29,6 +29,12 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
 
         private readonly Bindable<bool> showTrail = new Bindable<bool>(true);
 
+        private readonly Bindable<bool> longTrail = new Bindable<bool>(true);
+
+        private readonly Bindable<float> longTrailLength = new Bindable<float>(1.00f);
+
+        private readonly Bindable<float> longTrailUpdateInterval = new Bindable<float>(1.00f);
+
         private readonly SkinnableDrawable cursorTrail;
 
         private readonly CursorRippleVisualiser rippleVisualiser;
@@ -51,6 +57,8 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
         private void load(OsuRulesetConfigManager rulesetConfig)
         {
             rulesetConfig?.BindWith(OsuRulesetSetting.ShowCursorTrail, showTrail);
+            rulesetConfig?.BindWith(OsuRulesetSetting.LongCursorTrail, longTrail);
+            rulesetConfig?.BindWith(OsuRulesetSetting.LongCursorTrailLength, longTrailLength);
         }
 
         protected override void LoadComplete()
@@ -58,6 +66,7 @@ namespace osu.Game.Rulesets.Osu.UI.Cursor
             base.LoadComplete();
 
             showTrail.BindValueChanged(v => cursorTrail.FadeTo(v.NewValue ? 1 : 0, 200), true);
+
 
             ActiveCursor.CursorScale.BindValueChanged(e =>
             {

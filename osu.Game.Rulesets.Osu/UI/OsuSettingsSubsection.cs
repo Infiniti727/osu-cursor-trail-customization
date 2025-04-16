@@ -45,6 +45,25 @@ namespace osu.Game.Rulesets.Osu.UI
                 },
                 new SettingsCheckbox
                 {
+                    LabelText = RulesetSettingsStrings.LongCursorTrail,
+                    Current = config.GetBindable<bool>(OsuRulesetSetting.LongCursorTrail)
+                },
+                new SettingsSlider<float>
+                {
+                    LabelText = RulesetSettingsStrings.LongCursorTrailLength,
+                    Current = config.GetBindable<float>(OsuRulesetSetting.LongCursorTrailLength),
+                    KeyboardStep = 0.01f,
+                    DisplayAsPercentage = false
+                },
+                new SettingsSlider<float>
+                {
+                    LabelText = RulesetSettingsStrings.LongCursorTrailUpdateInterval,
+                    Current = config.GetBindable<float>(OsuRulesetSetting.LongCursorTrailUpdateInterval),
+                    KeyboardStep = 0.01f,
+                    DisplayAsPercentage = false
+                },
+                new SettingsCheckbox
+                {
                     LabelText = RulesetSettingsStrings.CursorRipples,
                     Current = config.GetBindable<bool>(OsuRulesetSetting.ShowCursorRipples)
                 },

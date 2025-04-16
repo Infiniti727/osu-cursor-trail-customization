@@ -30,6 +30,21 @@ namespace osu.Game.Localisation
         public static LocalisableString CursorTrail => new TranslatableString(getKey(@"cursor_trail"), @"Cursor trail");
 
         /// <summary>
+        /// "Long cursor trail"
+        /// </summary>
+        public static LocalisableString LongCursorTrail => new TranslatableString(getKey(@"long_cursor_trail"), @"Long cursor trail");
+
+        /// <summary>
+        /// "Long cursor trail length"
+        /// </summary>
+        public static LocalisableString LongCursorTrailLength => new TranslatableString(getKey(@"long_cursor_trail_length"), @"Long cursor trail length");
+
+        /// <summary>
+        /// "Long cursor trail update interval"
+        /// </summary>
+        public static LocalisableString LongCursorTrailUpdateInterval => new TranslatableString(getKey(@"long_cursor_trail_update_interval"), @"Long cursor trail update interval");
+
+        /// <summary>
         /// "Cursor ripples"
         /// </summary>
         public static LocalisableString CursorRipples => new TranslatableString(getKey(@"cursor_ripples"), @"Cursor ripples");

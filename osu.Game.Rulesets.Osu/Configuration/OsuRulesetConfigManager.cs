@@ -1,6 +1,7 @@
 // Copyright (c) ppy Pty Ltd <contact@ppy.sh>. Licensed under the MIT Licence.
 // See the LICENCE file in the repository root for full licence text.
 
+using osu.Framework.Bindables;
 using osu.Game.Configuration;
 using osu.Game.Rulesets.Configuration;
 using osu.Game.Rulesets.UI;
@@ -20,6 +21,9 @@ namespace osu.Game.Rulesets.Osu.Configuration
             SetDefault(OsuRulesetSetting.SnakingInSliders, true);
             SetDefault(OsuRulesetSetting.SnakingOutSliders, true);
             SetDefault(OsuRulesetSetting.ShowCursorTrail, true);
+            SetDefault(OsuRulesetSetting.LongCursorTrail, true);
+            SetDefault(OsuRulesetSetting.LongCursorTrailLength, 1, 0.01f, 2, 0.01f);
+            SetDefault(OsuRulesetSetting.LongCursorTrailUpdateInterval, 1, 0.2f, 2, 0.01f);
             SetDefault(OsuRulesetSetting.ShowCursorRipples, false);
             SetDefault(OsuRulesetSetting.PlayfieldBorderStyle, PlayfieldBorderStyle.None);
 
@@ -36,6 +40,9 @@ namespace osu.Game.Rulesets.Osu.Configuration
         SnakingInSliders,
         SnakingOutSliders,
         ShowCursorTrail,
+        LongCursorTrail,
+        LongCursorTrailLength,
+        LongCursorTrailUpdateInterval,
         ShowCursorRipples,
         PlayfieldBorderStyle,
 
